@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using AYellowpaper.SerializedCollections;
 using NaughtyAttributes;
 using UnityEngine;
 

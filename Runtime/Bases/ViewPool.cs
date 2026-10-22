@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-using AYellowpaper.SerializedCollections;
-
 namespace BattleTurn.UIManagements.Runtime
 {
     [Serializable]
     internal sealed class ViewPool<T> where T : UIViewer
     {
-        public SerializedDictionary<int, T> views = new();
+        public Dictionary<int, T> views = new();
 
         public int Count => views.Count;
 
