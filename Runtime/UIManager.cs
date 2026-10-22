@@ -18,19 +18,19 @@ namespace BattleTurn.UIManagements.Runtime
         [SerializeField] private List<PopupBase> _popupPrefabs = new();
 
         [BoxGroup(POPUP)]
-        [SerializeField, ReadOnly] private SerializedDictionary<string, ViewPool<PopupBase>> _showingGroup = new();
+        [SerializeField, ReadOnly] private Dictionary<string, ViewPool<PopupBase>> _showingGroup = new();
 
         [BoxGroup(POPUP)]
-        [SerializeField, ReadOnly] private SerializedDictionary<string, ViewPool<PopupBase>> _hidingGroup = new();
+        [SerializeField, ReadOnly] private Dictionary<string, ViewPool<PopupBase>> _hidingGroup = new();
 
         [BoxGroup(SCREEN)]
         [SerializeField] private List<ScreenBase> _screenPrefabs = new();
 
         [BoxGroup(SCREEN)]
-        [SerializeField, ReadOnly] private SerializedDictionary<string, ScreenBase> _showingScreens = new();
+        [SerializeField, ReadOnly] private Dictionary<string, ScreenBase> _showingScreens = new();
 
         [BoxGroup(SCREEN)]
-        [SerializeField, ReadOnly] private SerializedDictionary<string, ScreenBase> _hidingScreens = new();
+        [SerializeField, ReadOnly] private Dictionary<string, ScreenBase> _hidingScreens = new();
 
         private Dictionary<Type, PopupBase> _popupPrefabMap = new();
         private Dictionary<Type, ScreenBase> _screenPrefabMap = new();
