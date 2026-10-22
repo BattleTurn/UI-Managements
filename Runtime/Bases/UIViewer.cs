@@ -23,7 +23,7 @@ namespace BattleTurn.UIManagements.Runtime
 
         protected virtual void Awake()
         {
-            instanceID = GetInstanceID();
+            instanceID = GetEntityId();
         }
 
         protected abstract void ShowSelf();

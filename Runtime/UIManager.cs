@@ -104,7 +104,7 @@ namespace BattleTurn.UIManagements.Runtime
                 _showingGroup.Add(popupType.Name, showingPool);
             }
 
-            showingPool.Push(popupInstance.GetInstanceID(), popupInstance);
+            showingPool.Push(popupInstance.GetEntityId(), popupInstance);
             popupInstance.OnInitialize(this);
             popupInstance.ShowInternal();
             return popupInstance;
@@ -125,7 +125,7 @@ namespace BattleTurn.UIManagements.Runtime
                 _showingGroup.Add(popupBase.GetType().Name, showingPool);
             }
 
-            showingPool.Push(popupBase.GetInstanceID(), popupBase);
+            showingPool.Push(popupBase.GetEntityId(), popupBase);
             popupBase.transform.SetParent(_layerMap[layer], false);
             popupBase.OnInitialize(this);
             popupBase.ShowInternal();
@@ -140,9 +140,9 @@ namespace BattleTurn.UIManagements.Runtime
                 throw new UIViewNotShowingException(type.Name, nameof(_showingGroup));
             }
 
-            if (showingPool.Has(popupInstance.GetInstanceID()))
+            if (showingPool.Has(popupInstance.GetEntityId()))
             {
-                showingPool.views.Remove(popupInstance.GetInstanceID());
+                showingPool.views.Remove(popupInstance.GetEntityId());
             }
             else
             {
@@ -156,7 +156,7 @@ namespace BattleTurn.UIManagements.Runtime
                 _hidingGroup.Add(type.Name, hidingPool);
             }
 
-            hidingPool.Push(popupInstance.GetInstanceID(), popupInstance);
+            hidingPool.Push(popupInstance.GetEntityId(), popupInstance);
 
             popupInstance.HideInternal();
             return (T)popupInstance;
@@ -170,9 +170,9 @@ namespace BattleTurn.UIManagements.Runtime
                 throw new UIViewNotShowingException(type.Name, nameof(_showingGroup));
             }
 
-            if (showingPool.Has(popupInstance.GetInstanceID()))
+            if (showingPool.Has(popupInstance.GetEntityId()))
             {
-                showingPool.views.Remove(popupInstance.GetInstanceID());
+                showingPool.views.Remove(popupInstance.GetEntityId());
             }
             else
             {
@@ -186,7 +186,7 @@ namespace BattleTurn.UIManagements.Runtime
                 _hidingGroup.Add(type.Name, hidingPool);
             }
 
-            hidingPool.Push(popupInstance.GetInstanceID(), popupInstance);
+            hidingPool.Push(popupInstance.GetEntityId(), popupInstance);
 
             popupInstance.HideInternal();
         }

@@ -1,6 +1,6 @@
 {
     "name": "BattleTurn.UIManagements.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "BattleTurn.UIManagements.Editor",
     "references": [
         "GUID:ee8cacc606241664ab4e4c400ce0901b"
     ],
