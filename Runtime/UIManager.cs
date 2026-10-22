@@ -104,7 +104,7 @@ namespace BattleTurn.UIManagements.Runtime
                 _showingGroup.Add(popupType.Name, showingPool);
             }
 
-            showingPool.Push(popupInstance.GetEntityId(), popupInstance);
+            showingPool.Push(popupInstance.GetEntityId().GetHashCode(), popupInstance);
             popupInstance.OnInitialize(this);
             popupInstance.ShowInternal();
             return popupInstance;
@@ -125,7 +125,7 @@ namespace BattleTurn.UIManagements.Runtime
                 _showingGroup.Add(popupBase.GetType().Name, showingPool);
             }
 
-            showingPool.Push(popupBase.GetEntityId(), popupBase);
+            showingPool.Push(popupBase.GetEntityId().GetHashCode(), popupBase);
             popupBase.transform.SetParent(_layerMap[layer], false);
             popupBase.OnInitialize(this);
             popupBase.ShowInternal();
@@ -140,9 +140,9 @@ namespace BattleTurn.UIManagements.Runtime
                 throw new UIViewNotShowingException(type.Name, nameof(_showingGroup));
             }
 
-            if (showingPool.Has(popupInstance.GetEntityId()))
+            if (showingPool.Has(popupInstance.GetEntityId().GetHashCode()))
             {
-                showingPool.views.Remove(popupInstance.GetEntityId());
+                showingPool.views.Remove(popupInstance.GetEntityId().GetHashCode());
             }
             else
             {
@@ -156,7 +156,7 @@ namespace BattleTurn.UIManagements.Runtime
                 _hidingGroup.Add(type.Name, hidingPool);
             }
 
-            hidingPool.Push(popupInstance.GetEntityId(), popupInstance);
+            hidingPool.Push(popupInstance.GetEntityId().GetHashCode(), popupInstance);
 
             popupInstance.HideInternal();
             return (T)popupInstance;
@@ -170,9 +170,9 @@ namespace BattleTurn.UIManagements.Runtime
                 throw new UIViewNotShowingException(type.Name, nameof(_showingGroup));
             }
 
-            if (showingPool.Has(popupInstance.GetEntityId()))
+            if (showingPool.Has(popupInstance.GetEntityId().GetHashCode()))
             {
-                showingPool.views.Remove(popupInstance.GetEntityId());
+                showingPool.views.Remove(popupInstance.GetEntityId().GetHashCode());
             }
             else
             {
@@ -186,7 +186,7 @@ namespace BattleTurn.UIManagements.Runtime
                 _hidingGroup.Add(type.Name, hidingPool);
             }
 
-            hidingPool.Push(popupInstance.GetEntityId(), popupInstance);
+            hidingPool.Push(popupInstance.GetEntityId().GetHashCode(), popupInstance);
 
             popupInstance.HideInternal();
         }
